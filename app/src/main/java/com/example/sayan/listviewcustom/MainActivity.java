@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //step 2
-        ListView listView = (ListView) findViewById(R.id.listview_id);
+        ListView listView = (ListView) findViewById(R.id.Listview_id);
 
         //Handler multi threading
         Handler handler = new Handler();
