@@ -15,6 +15,8 @@ import android.widget.TextView;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class MainActivity extends AppCompatActivity {
 
     //steps to follow when creating a custom listview
@@ -105,22 +107,20 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
             //get the layout inflater object from the context
-            LayoutInflater inflater = getLayoutInflator();
+            LayoutInflater inflater = getLayoutInflater();
             //get the child view after inflating the child layout
             View rootView = inflater.inflate(R.layout.child_layout, null);
             //initialize all the views in the child layout
             ImageView imageView = rootView.findViewById(R.id.imageview_child_id);
             TextView textView = rootView.findViewById(R.id.textview_child_id);
             //set the view with dynamic data for each child
-            imageView.setImageDrawable(getDrawable(imageList[i]));
+            imageView.setImageDrawable(getResources().getDrawable(imageList[i]));
             textView.setText(textList[i]);
             //return the child view
             return rootView;
         }
 
-        private void getLayoutInflator() {
-            return ;
-        }
+
     }
 
 }
